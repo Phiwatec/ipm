@@ -1,0 +1,28 @@
+{
+    "token": "your_hetzner_token",
+    "system": "dns.hetzner.com",
+    "zone": "your_zone_name",
+    "records": {
+      "ipv6" :[
+        {
+          "name": "myNASServer",
+          "domain": "subdomain2",
+          "suffix": "b44a:158f:11c9:9b9e",
+          "record_id": "f341530c81656a068399a7fce210c03c"
+        },
+        {
+          "name": "SoneOtherName",
+          "domain": "subdomain",
+          "suffix": "6986:2eca:3f83:8f0f",
+          "record_id": "0c5645c6a1f3ff5455f61f7eeaf28c53"
+        }
+        ],
+      "ipv4":[
+        {
+          "name": "SomeName",
+          "domain": "server",
+          "record_id": "c7a72a5f536ca58cc2771236a6d84b1c"
+        }
+    ]
+  }
+  }

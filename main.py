@@ -58,30 +58,31 @@ def updateV6(new_prefix,prefix_len):
             location.update_v6(new_prefix,prefix_len)
 
 
+def main():
+    config=json.loads(open(CONFIGFILE, "r").read())
+    ip_config_file_handler=open(IP_CONFIG_FILE, "r+")
+    ip_config=json.loads(ip_config_file_handler.read())
 
-config=json.loads(open(CONFIGFILE, "r").read())
-ip_config_file_handler=open(IP_CONFIG_FILE, "r+")
-ip_config=json.loads(ip_config_file_handler.read())
+    #Get prefix from own IP adress
+    new_prefix=getNewPrefix()
+    new_ip=getNewIP()
+    old_prefix=ip_config["old_prefix"]
+    old_ip=ip_config["old_ip"]
+    if (new_prefix == old_prefix):
+        print("IPv6 didn't change")
+    else:
+        print("Got new prefix:  "+new_prefix+"\nUpdating all references\n")
+        updateV6(new_prefix,PREFIX_LEN)
 
-#Get prefix from own IP adress
-new_prefix=getNewPrefix()
-new_ip=getNewIP()
-old_prefix=ip_config["old_prefix"]
-old_ip=ip_config["old_ip"]
-if (new_prefix == old_prefix):
-    print("IPv6 didn't change")
-else:
-    print("Got new prefix:  "+new_prefix+"\nUpdating all references\n")
-    updateV6(new_prefix,PREFIX_LEN)
+    if (new_ip == old_ip):
+        print("IPv4 didn't change")
+    else:
+        print("Got new ip:  " + new_ip + "\n Updating all references\n")
+        updateV4(new_ip)
 
-if (new_ip == old_ip):
-    print("IPv4 didn't change")
-else:
-    print("Got new ip:  " + new_ip + "\n Updating all references\n")
-    updateV4(new_ip)
-
-   
-updatePrefixFile(new_prefix,new_ip)
+    
+    updatePrefixFile(new_prefix,new_ip)
 
 
-
+if __name__ == "__main__":
+    main()

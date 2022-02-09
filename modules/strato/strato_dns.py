@@ -31,6 +31,8 @@ class strato_dns:
         for record in self.config["records"]["ipv4"]:
             self.update_dns(new_ip,"",record["domain"])
 
-
+if __name__ == "__main__":
+    print("This is a library")
+    exit(1)
 
 

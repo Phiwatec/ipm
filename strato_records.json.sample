@@ -1,0 +1,30 @@
+{
+    "password": "Your Password",
+    "system": "dyndns.strato.com/nic/update?hostname=",
+    "user": "root-domain",
+    "hostname": "hostname_goes_here",
+
+
+    "records": {
+        "ipv6": [
+            {
+                "name": "Some Name",
+                "domain": "home.example.net",
+                "suffix": "1234:5678:9abc:de"
+            },
+            {
+                "name": "Some other name",
+                "domain": "server.example.net",
+                "suffix": "1234:5678:9abc:de"
+                
+            }
+        ],
+        "ipv4": [
+            {
+                "name": "Some other name",
+                "domain": "vpn.example.net"
+                
+            }
+        ]
+    }
+}
