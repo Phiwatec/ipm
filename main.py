@@ -1,10 +1,10 @@
 import requests,json
 from modules.hetzner_dns.hetzner_dns import hetzner_dns
-CONFIGFILE="config.json"
-IP_CONFIG_FILE="ip_config.json"
+CONFIGFILE="settings.conf"
+IP_CONFIG_FILE="current_ip.json"
 PREFIX_LEN=64
 locations=[]
-hdns=hetzner_dns("modules/hetzner_dns/records.json")
+hdns=hetzner_dns("hetzner_records.json")
 
 locations.append(hdns)
 

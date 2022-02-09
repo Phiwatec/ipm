@@ -1,5 +1,4 @@
-records.json
-records copy.json
+*.json
 
 
 # Byte-compiled / optimized / DLL files
