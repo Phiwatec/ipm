@@ -1,8 +1,10 @@
+IPv6 didn't change
+IPv4 didn't change
 Traceback (most recent call last):
   File "/home/user/ipm/main.py", line 88, in <module>
     main()
-  File "/home/user/ipm/main.py", line 67, in main
-    new_prefix=getNewPrefix()
-  File "/home/user/ipm/main.py", line 40, in getNewPrefix
-    r = requests.get(config["ip6_url"])
-NameError: name 'config' is not defined
+  File "/home/user/ipm/main.py", line 34, in main
+    updatePrefixFile(new_prefix,new_ip)
+  File "/home/user/ipm/main.py", line 50, in updatePrefixFile
+    ip_config_file_handler.seek(0)
+NameError: name 'ip_config_file_handler' is not defined
