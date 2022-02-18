@@ -42,12 +42,12 @@ def getNewPrefix(config):
     return getPrefix(r.text)
 
 
-def updateV4(new_ip):
+def updateV4(locations,new_ip):
     for location in locations:
         if (location.hasV4()):
             location.update_v4(new_ip)
     
-def updateV6(new_prefix,prefix_len):
+def updateV6(locations,new_prefix,prefix_len):
     for location in locations:
         if (location.hasV6()):
             location.update_v6(new_prefix,prefix_len)
@@ -71,13 +71,13 @@ def main():
         print("IPv6 didn't change")
     else:
         print("Got new prefix:  "+new_prefix+"\nUpdating all references\n")
-        updateV6(new_prefix,PREFIX_LEN)
+        updateV6(locations,new_prefix,PREFIX_LEN)
 
     if (new_ip == old_ip):
         print("IPv4 didn't change")
     else:
         print("Got new ip:  " + new_ip + "\n Updating all references\n")
-        updateV4(new_ip)
+        updateV4(locations,new_ip)
 
     
     updatePrefixFile(new_prefix,new_ip,ip_config_file_handler)
