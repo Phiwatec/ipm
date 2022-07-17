@@ -1,11 +1,2 @@
-Got new prefix:  2a02:8071:22a7:ca0f:
-Updating all references
-
-Traceback (most recent call last):
-  File "/home/user/ipm/main.py", line 87, in <module>
-    main()
-  File "/home/user/ipm/main.py", line 74, in main
-    updateV6(new_prefix,PREFIX_LEN)
-  File "/home/user/ipm/main.py", line 51, in updateV6
-    for location in locations:
-NameError: name 'locations' is not defined
+IPv6 didn't change
+IPv4 didn't change
